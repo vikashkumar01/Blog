@@ -1,0 +1,17 @@
+.about{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding: 50px;
+}
+
+.about>h3{
+    font-size: 30px;
+    color:coral;
+}
+.about>p{
+    font: size 20px;
+    color:#444;
+    margin-top: 20px;
+}

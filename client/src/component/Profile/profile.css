@@ -1,0 +1,56 @@
+.profile {
+    width: 80%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    overflow-y: hidden;
+}
+
+
+.profilePic1{
+    margin-top: 40px;
+    height:150px;
+    width:150px;
+    border-radius: 50%;
+    object-fit:none;
+}
+
+
+.profileInfo{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-top:60px;
+}
+
+.profileInfo>h3{
+
+    font-size: 20px;
+    margin-top:10px;
+    color:gray;
+}
+
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:60px;
+}
+
+.btndesign{
+
+    width:200px;
+    height:40px;
+    margin-top: 10px;
+    border-radius:5px;
+    color:white;
+    background-color: lightcoral;
+    border:none;
+    overflow: hidden;
+}
+

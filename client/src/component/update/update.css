@@ -1,0 +1,76 @@
+.profileEdit{
+    width:60%;
+    height: calc(100vh - 100px);
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+    margin-top:80px;
+}
+
+.title{
+    color:lightcoral;
+    font-size:30px;
+    text-align:center;
+}
+
+.imgContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin:10px;
+}
+
+.imgContainer>span{
+    margin-top:10px;
+}
+
+.img1{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:none;
+}
+
+.formControl1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file{
+    width: 50%;
+    height:30px;
+    margin-top:20px;
+    padding: 5px;
+}
+
+.input{
+    width: 50%;
+    height:30px;
+    margin-top:20px;
+    padding: 5px;
+    outline: none;
+    border-radius:5px;
+    border:1px solid gray;
+    font-size: 15px;
+}
+
+.btn1{
+    width: 52%;
+    height:40px;
+    margin-top:20px;
+    background-color:lightcoral;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+
+@media screen and (max-width:500px) {
+
+    .profileEdit{
+        width:80%;
+    }
+    
+}

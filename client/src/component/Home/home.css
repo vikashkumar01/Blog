@@ -1,0 +1,171 @@
+.container {
+    width: 100%;
+    height: calc(100% - 50px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container>div {
+    display: flex;
+}
+
+.container>div>span {
+    width: 100%;
+    color: blue;
+    font-size: 50px;
+}
+
+.margin1 {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.contentBox {
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    flex-direction: row;
+    margin-top:10px;
+    overflow: hidden;
+}
+
+.imagediv {
+  
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    overflow: hidden;
+    
+}
+
+image2 {
+    width: 40vw;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.content {
+    display: flex;
+    width: 70vw;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    background-color: rgb(253, 244, 244);
+}
+
+.content>h2 {
+    margin: 10px;
+    color: #444;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.content>p {
+    margin: 10px;
+    color: #444;
+    line-height: 24px;
+    overflow: hidden;
+
+}
+
+.readMore {
+    margin: 10px;
+    border: none;
+    color: coral;
+    background-color: rgb(253, 244, 244);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.date {
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+}
+
+.postDate {
+    color: #444;
+}
+
+.notfound {
+    color: rgb(173, 41, 41);
+    font-size: 20px;
+    text-align: center;
+    margin: 200px;
+}
+
+@media screen and (max-width:800px) {
+    .margin1 {
+
+        width: 80%;
+
+    }
+
+    .contentBox {
+        height: 80%;
+        flex-direction: column;
+    }
+
+    .image {
+        width: auto;
+        height: 30vh;
+    }
+
+    .content {
+        width: 100%;
+        padding: 10px;
+        height: 60%;
+
+    }
+
+    .content>p {
+        margin: 10px;
+        color: #444;
+        overflow: hidden;
+        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px;
+        max-height: 64px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+
+    }
+
+}
+
+
+
+@media screen and (max-width:912px) {
+
+    .imagediv>img {
+
+        height: 100%;
+        width: 100%;
+        object-fit: none;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .contentBox {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .imagediv {
+        height: 35vh;
+        width: auto;
+    }
+
+
+}
