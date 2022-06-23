@@ -22,7 +22,7 @@ cloudinary.config({
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
-app.use(cors());
+
 app.use(cookieParser());
 app.use(fileupload({
     limits: { fileSize: 50 * 1024 * 1024 },
@@ -35,13 +35,17 @@ mongoose.connect(process.env.MONGO_URL,{
 .then(console.log("connected to mongoDB"))
 .catch((err)=>(console.log(err)));
 
-app.use("/", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Max-Age", "1800");
-    res.setHeader("Access-Control-Allow-Headers", "content-type");
-    res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
-  })
+var corsOptions = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Max-Age": "1800",
+    "Access-Control-Allow-Headers": "content-type",
+    "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+}
+
+app.use(cors( corsOptions));
+
+
 
 
 app.use('/api/auth', auth);
