@@ -8,7 +8,9 @@ auth.post('/register', async (req, res) => {
 
     try {
 
-        const myCloud = await cloudinary.v2.uploader.upload(req.body.profilePic, { folder: "Profile" });
+        const avatar = req.files.profilePic.tempFilePath;
+
+        const myCloud = await cloudinary.v2.uploader.upload(avatar, { folder: "Profile" });
 
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
