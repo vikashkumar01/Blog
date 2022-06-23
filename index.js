@@ -43,7 +43,7 @@ var corsOptions = {
     "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, PATCH, OPTIONS"
 }
 
-app.use(cors( corsOptions));
+app.use(cors(corsOptions));
 
 
 
