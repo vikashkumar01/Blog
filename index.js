@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors');
 const cloudinary = require('cloudinary');
 const path = require('path');
+const fileupload = require('express-fileupload'); 
 
 const auth = require('./routes/auth')
 const userRoute = require('./routes/users')
@@ -23,6 +24,9 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cors());
 app.use(cookieParser());
+app.use(fileupload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true}))
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewurlParser: true,
@@ -30,6 +34,8 @@ mongoose.connect(process.env.MONGO_URL,{
 })
 .then(console.log("connected to mongoDB"))
 .catch((err)=>(console.log(err)));
+
+
 
 
 app.use('/api/auth', auth);
