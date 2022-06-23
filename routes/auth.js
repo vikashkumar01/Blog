@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require('../models/User');
 const auth = express.Router();
+const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const cloudinary = require('cloudinary');
 
@@ -8,9 +9,7 @@ auth.post('/register', async (req, res) => {
 
     try {
 
-        const avatar = req.files.profilePic.tempFilePath;
-
-        const myCloud = await cloudinary.v2.uploader.upload(avatar, { folder: "Profile" });
+        const myCloud = await cloudinary.v2.uploader.upload(req.files.avatar.tempFilePath, { folder: "Profile" });
 
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
