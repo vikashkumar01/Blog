@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <div className="about">
       <h3>This is Blog website...</h3>
-      <p>You can post your own blog</p>
+      <p>You can post your own blog after login and register</p>
     </div>
   )
 }

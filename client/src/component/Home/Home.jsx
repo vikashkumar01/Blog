@@ -9,7 +9,7 @@ export const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get('https://blogwebba.herokuapp.com/api/posts')
+      const res = await axios.get('http://localhost:5000/api/v1/posts')
       setPosts(res.data.message)
     }
     fetchPosts();
@@ -34,7 +34,7 @@ export const Home = () => {
                 <div className="content">
 
                   <h2>{p.title}</h2>
-                  <p>{p.description}</p>
+                  <p >{p.description.substring(0,150)}...</p>
                   <div className="date">
                     <span className="postDate">{new Date(p.createdAt).toDateString()}</span>
                   </div>

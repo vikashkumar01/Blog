@@ -1,10 +1,21 @@
+.loginContainer{
+    
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .login{
-    height: 600px;
+    height: 400px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start; 
-    margin: 50px;
+    justify-content: center; 
+    margin-top: 100px;
+    box-shadow: 0 0 5px rgb(190, 190, 190);
+    border-radius: 5px;
     
 }
 

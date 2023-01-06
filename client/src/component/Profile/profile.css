@@ -1,11 +1,11 @@
 .profile {
-    width: 80%;
-    height: calc(100vh - 50px);
+    width: 100%;
+    height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    overflow-y: hidden;
+    justify-content: center;
+    margin-top: 70px;
 }
 
 
@@ -21,8 +21,8 @@
 .profileInfo{
     display: flex;
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-top:60px;
 }
 

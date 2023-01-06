@@ -14,7 +14,7 @@ export const Rpost = () => {
   const [post, setPost] = useState({})
 
   const getPost = async () => {
-    const res = await axios.get('https://blogwebba.herokuapp.com/api/posts/' + path)
+    const res = await axios.get('http://localhost:5000/api/v1/posts/' + path)
     setPost(res.data.message)
   }
 
@@ -30,7 +30,7 @@ export const Rpost = () => {
       <span>{post.title}</span>
       <div className="postDetails">
 
-        <img src={post?.photo?.url? post?.photo?.url : "https://bitsofco.de/content/images/2018/12/broken-1.png"} alt="not found" />
+        <img className='image' src={post?.photo?.url? post?.photo?.url : "https://bitsofco.de/content/images/2018/12/broken-1.png"} alt="not found" />
 
         <div className="postDetail">
 

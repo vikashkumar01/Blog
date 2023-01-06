@@ -23,7 +23,7 @@ export const Upassword = () => {
         if (newPassword === confirmPassword) {
 
             try {
-                await axios.put('https://blogwebba.herokuapp.com/api/users/updatepassword/' + path, {
+                await axios.put('http://localhost:5000/api/v1/users/updatepassword/' + path, {
                     newPassword
                 })
                 dispatch({ type: "LOGOUT" })

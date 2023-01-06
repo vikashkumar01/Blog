@@ -17,7 +17,7 @@ export const Login = () => {
 
     try{
       
-      const res= await axios.post('https://blogwebba.herokuapp.com/api/auth/login',{
+      const res= await axios.post('http://localhost:5000/api/v1/auth/login',{
         email:emailRef.current.value,
         password:passwordRef.current.value
   
@@ -32,6 +32,7 @@ export const Login = () => {
 
 
   return (
+    <div className='loginContainer'>
     <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -46,6 +47,7 @@ export const Login = () => {
       </form>
 
       {error && <span style={{ color: 'red' ,marginTop:"10px"}}>Somthing Went Wrong!</span>}
+    </div>
     </div>
   )
 };

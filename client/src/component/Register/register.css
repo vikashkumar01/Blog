@@ -1,13 +1,20 @@
+.registerContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .register{
 
-    height: cal(100vh - 50px);
-    width:80%;
+    height: 90%;
+    width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start; 
-    margin: auto;
-    
+    justify-content: center; 
+    margin-top: 100px;
+    box-shadow: 0 0 5px rgb(190, 190, 190);
+    border-radius: 5px;
 }
 
 

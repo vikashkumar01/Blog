@@ -19,7 +19,7 @@ export const Upost = () =>{
   const [file, setFile] = useState(null)
 
   const getPost = async () => {
-    const res = await axios.get('https://blogwebba.herokuapp.com/api/posts/' + path)
+    const res = await axios.get('http://localhost:5000/api/v1/posts/' + path)
     setTitle(res.data.message.title)
     setDescription(res.data.message.description)
   }

@@ -11,7 +11,7 @@ export const Write = () => {
 
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
-  const [postPic,setpostPic] = useState("")
+  const [postPic, setpostPic] = useState("")
 
 
   const handleImageChange = (e) => {
@@ -30,45 +30,47 @@ export const Write = () => {
 
   const handleSubmit = async (e) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  const newPost = {
-    title,
-    description,
-    photo: postPic,
-    username: user.message.username,
+    const newPost = {
+      title,
+      description,
+      photo: postPic,
+      username: user.message.username,
+    };
+
+    try {
+      const res = await axios.post('http://localhost:5000/api/v1/posts', newPost)
+      res.data && window.location.replace('/');
+    }
+    catch (e) {
+      console.log(e)
+    }
+
   };
 
-  try {
-    const res = await axios.post('https://blogwebba.herokuapp.com/api/posts', newPost)
-    res.data && window.location.replace('/');
-  }
-  catch (e) { }
 
-};
+  return (
+    <div className="write">
 
+      <h1 style={{ "color": "lightcoral" }}>Write Your Blog</h1>
 
-return (
-  <div className="write">
+      {postPic && (
+        <img className="writeImg" src={postPic} alt="" />
+      )}
 
-    {postPic && (
-      <img className="writeImg" src={postPic} alt="" />
-    )}
+      <form className="writeForm" onSubmit={handleSubmit}>
+        <div className="writeFormGroup">
+          <label htmlFor="fileInput"><i className=" writeIcon fa-solid fa-plus"></i>
+          </label>
+          <input type='file' id='fileInput' accept="image/*" onChange={handleImageChange} style={{ display: "none" }} />
+          <input type='text' placeholder="Title" onChange={e => setTitle(e.target.value)} className="writeInput" />
+          <textarea type="text" placeholder="Write Your Blog" onChange={e => setDescription(e.target.value)} className=" writeText" />
+        </div>
+        <button className="writeSubmit" type="submit">Publish</button>
+      </form>
 
-    <form className="writeForm" onSubmit={handleSubmit}>
-      <div className="writeFormGroup">
-        <label htmlFor="fileInput"><i className=" writeIcon fa-solid fa-plus"></i>
-        </label>
-        <input type='file' id='fileInput' accept="image/*" onChange={handleImageChange} style={{ display: "none" }} />
-        <input type='text' placeholder="Title" onChange={e => setTitle(e.target.value)} className="writeInput" />
-      </div>
-      <div className="writeFormGroup">
-        <textarea type="text" placeholder="Write Your Blog" onChange={e => setDescription(e.target.value)} className="writeInput writeText" />
-      </div>
-      <button className="writeSubmit" type="submit">Publish</button>
-    </form>
+    </div>
+  )
 
-  </div>
-)
-      
 }

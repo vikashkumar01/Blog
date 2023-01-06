@@ -32,7 +32,7 @@ export const Uprofile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-           const res = await axios.put('https://blogwebba.herokuapp.com/api/users/updateprofile/' + path,{
+           const res = await axios.put('http://localhost:5000/api/v1/users/updateprofile/' + path,{
                 username,
                 email,
                 profilePic

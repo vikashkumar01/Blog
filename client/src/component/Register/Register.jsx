@@ -29,7 +29,7 @@ export const Register = () => {
     e.preventDefault();
    try{
     setError(false)
-    const res= await axios.post('https://blogwebba.herokuapp.com/api/auth/register',{
+    const res= await axios.post('http://localhost:5000/api/v1/auth/register',{
       username,
       email,
       password,
@@ -47,6 +47,7 @@ export const Register = () => {
   
   return (
 
+    <div className='registerContainer'>
     <div className="register">
       <span className="registerTitle">Register</span>
 
@@ -72,6 +73,7 @@ export const Register = () => {
       </form>
 
      {error && <span style={{ color: 'red' ,marginTop:"10px"}}>Somthing Went Wrong!</span>}
+    </div>
     </div>
 
   )

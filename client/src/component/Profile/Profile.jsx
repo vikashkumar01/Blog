@@ -13,7 +13,7 @@ export const Profile = () => {
 
   const getUser = async() =>{
       
-    const res = await axios.get('https://blogwebba.herokuapp.com/api/users/' + user.message._id )
+    const res = await axios.get('http://localhost:5000/api/v1/users/' + user.message._id )
     setProfile(res.data.message)
     
   }
@@ -25,7 +25,7 @@ export const Profile = () => {
 
   const deleteProfile = async () => {
     try {
-      await axios.delete('https://blogwebba.herokuapp.com/api/users/' + user.message._id)
+      await axios.delete('http://localhost:5000/api/v1/users/' + user.message._id)
       dispatch({ type: "LOGOUT" })
       window.location.replace('/login');
     }
@@ -34,6 +34,7 @@ export const Profile = () => {
 
   return (
     <div className="profile">
+      <h1 style={{"color":"lightcoral"}}>Profile</h1>
       <img className="profilePic1" src={profile?.profilePic?.url} alt="" />
 
       <div className="profileInfo">
